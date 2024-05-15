@@ -1,0 +1,6 @@
+[Default Applications]
+
+[Added Associations]
+image/png=feh.desktop;
+image/jpeg=feh.desktop;sxiv.desktop;
+inode/directory=feh.desktop;sxiv.desktop;
