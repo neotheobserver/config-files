@@ -12,14 +12,25 @@ exec --no-startup-id ~/.screenlayout/default.sh
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 exec --no-startup-id systemctl --user start mpd
 exec --no-startup-id picom -b
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id lxpolkit &
+exec --no-startup-id ~/.config/polybar/launch.sh
 
+assign [class="Thunar"] $ws1
+assign [class="Brave-browser"] $ws2
+assign [class="Firefox-esr"] $ws3
+assign [class="Transmission-gtk"] $ws10
+assign [class="vlc"] $ws4
+
+exec --no-startup-id thunar &
+exec --no-startup-id brave-browser &
+exec --no-startup-id firefox &
+exec --no-startup-id transmission-gtk &
 
 set $mod Mod1
 #default_orientation horizontal
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 12
+font xft:SpaceMono\ Nerd\ Font\ Mono, pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -55,7 +66,19 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+
+#lock screen
+bindsym Control+$mod+l exec i3lock
+
+#shutdown system
+bindsym Control+$mod+Shift+s exec polybar-msg cmd restart
+
+#brightness increase
+bindsym Control+$mod+Shift+i exec brightnessctl s +5%
+
+#brightness decrease
+bindsym Control+$mod+Shift+d exec brightnessctl s 5%-
 
 # kill focused window
 bindsym $mod+Shift+q kill

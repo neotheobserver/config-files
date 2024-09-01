@@ -1,6 +1,10 @@
 [Default Applications]
+x-scheme-handler/eclipse+command=_usr_share_dbeaver-ce_.desktop
 
 [Added Associations]
 image/png=feh.desktop;
 image/jpeg=feh.desktop;sxiv.desktop;
 inode/directory=feh.desktop;sxiv.desktop;
+text/x-groovy=codium.desktop;
+text/tab-separated-values=codium.desktop;vim.desktop;
+image/gif=feh.desktop;

@@ -79,7 +79,7 @@ grab_color=#00ff00
 grab_color_switch=false
 vte_allow_bold_text=true
 vte_lines=512
-recent_RDP=34.75.249.80
+recent_RDP=34.75.249.80,34.23.142.235,35.185.11.96
 
 [ssh_colors]
 background=#d5ccba
